@@ -17,6 +17,7 @@ namespace Winforms_and_EF
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
         }
     }
 }
