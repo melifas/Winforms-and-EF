@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Winforms_and_EF
 {
@@ -59,6 +60,7 @@ namespace Winforms_and_EF
             c.LastName = txtLName.Text;
             c.Address = txtAddress.Text;
             c.City = txtCity.Text;
+            c.Image = File.ReadAllBytes(dlgOpenImage.FileName);
             using (var contex = new EFWINFORMDBEntities())
             {
                 try
@@ -136,6 +138,14 @@ namespace Winforms_and_EF
             }
 
 
+        }
+
+        private void btnImage_Click(object sender, EventArgs e)
+        {
+            if (dlgOpenImage.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Load(dlgOpenImage.FileName);
+            }
         }
     }
 }

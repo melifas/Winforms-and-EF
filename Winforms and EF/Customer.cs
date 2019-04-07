@@ -19,5 +19,6 @@ namespace Winforms_and_EF
         public string LastName { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
+        public byte[] Image { get; set; }
     }
 }
